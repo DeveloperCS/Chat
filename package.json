@@ -15,8 +15,7 @@
         "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
         "install-client": "cd client && npm install",
         "install-server": "cd server && npm install",
-        "postinstall": "concurrently \"npm run install-server\" \"npm run install-client\"",
-        "heroku-postbuild": "npm start"
+        "postinstall": "concurrently \"npm run install-server\" \"npm run install-client\""
     },
     "author": "BrandonMA",
     "license": "MIT",
