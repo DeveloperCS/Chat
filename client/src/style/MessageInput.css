@@ -1,0 +1,25 @@
+.input-area{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    background: #d8e2e6;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.input{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80%;
+    margin: 0px 10px;
+}
+
+.button{
+    height: 37px;
+    width: 20%;
+    margin: 0px 10px;
+    margin-top: 1px;
+}

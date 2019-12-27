@@ -1,0 +1,14 @@
+.error-toast {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1rem;
+    position: absolute;
+}
+
+.error-toast_hidden {
+    z-index: -1;
+}
+
+.error-toast_visible {
+    z-index: 100000000;
+}

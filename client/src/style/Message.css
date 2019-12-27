@@ -1,0 +1,19 @@
+.message{
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 15px 15px 0px 15px;
+    background: #579ffb;
+    color:white;
+    margin-top: 10px;
+    display: flex;
+    align-self: flex-end;
+}
+
+.message:nth-child(even){
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 15px 15px 15px 0px;
+    background: #ececec;
+    color: black;
+    align-self: flex-start;
+}
