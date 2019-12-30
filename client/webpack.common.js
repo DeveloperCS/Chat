@@ -1,7 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: [
+        './src/index.tsx'
+    ],
     output: {
         publicPath: '/',
     },
@@ -33,26 +37,27 @@ module.exports = {
             test: /\.svg$/,
             loader: 'svg-inline-loader'
         }, {
-          test: /\.(png|jpe?g|gif)$/i,
-          use: [
-            {
-              loader: 'file-loader',
-            },
-          ],
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
         }]
     },
     plugins: [
         new HtmlWebPackPlugin({
-                template: "src/index.html",
-                filename: "./index.html"
-            })
+            template: "./src/index.html",
+            filename: "index.html"
+        })
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.json', '.css','.svg','.png','.jpg']
+        extensions: ['.tsx', '.ts', '.js', '.json', '.css', '.svg', '.png', '.jpg']
     },
     devServer: {
         publicPath: '/',
         historyApiFallback: true,
-        port: 3000
+        port: 3000,
+        host: `localhost`,
     }
 };
