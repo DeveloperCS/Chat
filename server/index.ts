@@ -9,6 +9,11 @@ import clientsRouter from './routers/ClientsRouter';
 import adminsRouter from './routers/AdminsRouter';
 import messagesRouter from './routers/MessagesRouter';
 
+//client server
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackConfig from '../client/webpack.common';
+
 
 mongoose.connect('mongodb://admin:Hola1234@ds061464.mlab.com:61464/wizcoach', {
     useNewUrlParser: true,
@@ -29,6 +34,11 @@ app.use('/api/clients', clientsRouter);
 app.use('/api/admins', adminsRouter);
 app.use('/api/messages', messagesRouter);
 
+
+//client server 
+app.use(webpackDevMiddleware(webpack(webpackConfig)));
+
+app.use(express.static('../client'));
 
 
 app.set('port',process.env.PORT|| 3001);

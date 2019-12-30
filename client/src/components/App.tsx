@@ -4,7 +4,6 @@ import SignIn from './Authentication/SignIn';
 import SignUp from './Authentication/SignUp';
 import Home from './Home';
 import ErrorToast from './ErrorToast';
-import Homme from './Home';
     
 
 const App: React.FunctionComponent<{}> = () => {

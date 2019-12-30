@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
     entry: [
-        './src/index.tsx'
+        '../client/src/index.tsx'
     ],
     output: {
         publicPath: '/',
@@ -47,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
+            template: "../client/src/index.html",
             filename: "index.html"
         })
     ],
@@ -55,9 +55,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.json', '.css', '.svg', '.png', '.jpg']
     },
     devServer: {
-        publicPath: '/',
+        publicPath: '../client/src/',
         historyApiFallback: true,
-        port: 3000,
+        port: 3001,
         host: `localhost`,
     }
 };

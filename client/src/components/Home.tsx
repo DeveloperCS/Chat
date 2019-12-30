@@ -18,8 +18,9 @@ const Home: React.FunctionComponent<Props> = (props) => {
         <Auth>
             {props.user === null ? null :
                 <div>
+                    <div className={"menuSider"}></div>
                     <div className="header">
-                        <div className={'container m-0 p-0'}>
+                        <div className={'container-fluid m-0 p-0'}>
                             <div className='row'>
                                 {/* <h3>{'Hola ' + props.user.name + ' ' + props.user.lastname}</h3> */}
                                 {/* <SignOutButton className="signout" title='Cerrar sesión'/> */}
@@ -27,7 +28,7 @@ const Home: React.FunctionComponent<Props> = (props) => {
                                     <IconCustom cursor={'pointer'} src={'charlar.svg'} width={'40px'} height={'40px'} />
                                 </div>
                                 <div className={'col-4'}>
-                                    <IconCustom cursor={'pointer'} src={'bot.svg'} width={'40px'} height={'40px'} />
+                                    <IconCustom cursor={'auto'} src={'bot.svg'} width={'40px'} height={'40px'} />
                                 </div>
                                 <div className={'col-4'}>
                                     <IconCustom cursor={'pointer'} src={'account.svg'} width={'40px'} height={'40px'} />
