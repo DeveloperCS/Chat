@@ -57,7 +57,5 @@ module.exports = {
     devServer: {
         publicPath: '../client/src/',
         historyApiFallback: true,
-        port: 3001,
-        host: `localhost`,
     }
 };
