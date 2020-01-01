@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import { LinkContainer } from 'react-router-bootstrap';
 
 interface Props {
     signIn: (email: string, password: string) => Promise<void>,
@@ -54,29 +55,32 @@ class SignIn extends React.Component<Props, State> {
     }
 
     render() {
-        return this.state.redirect ? <Redirect to='/'/> : (
-            <Container className='sign-container'>
+        return this.state.redirect ? <Redirect to='/' /> : (
+            <Container className='sign-container container-fluid'>
                 <Row className='sign-row'>
-                    <Col xs='1' sm='2' lg='3'/>
-                    <Col xs='10' sm='8' lg='6'>
+                    <Col className="d-sm-none d-lg-block d-xl-block" xs='1' sm='1' lg='3' />
+                    <Col xs='12' sm='12' lg='6'>
                         <SignForm
                             title='Iniciar Sesión'
                             showSpinner={this.state.showSpinner}
                             loadingButtonTitle='Iniciar Sesión'
                             alternativeButtonTitle='Crear Cuenta'
+                            subTitle='Hola a todos! Bienvenidos a WizCoach'
+                            buttonsType={['btnAcction', 'btnSecond']}
                             redirectURL='/signup'
+                            recoverPass={true}
                             onSubmit={this.handleSubmit}>
-                            <Form.Group>
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type='email' name='email' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Email</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='email' name='email' placeholder="Correo" required></Form.Control>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type='password' name='password' pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required></Form.Control>
+                            <Form.Group className={''}>
+                                {/* <Form.Label>Contraseña</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='password' name='password' placeholder="Contraseña" pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required></Form.Control>
                             </Form.Group>
                         </SignForm>
                     </Col>
-                    <Col xs='1' sm='2' lg='3'/>
+                    <Col className="d-sm-none d-lg-block d-xl-block" xs='1' sm='1' lg='3' />
                 </Row>
             </Container>
         );

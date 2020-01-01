@@ -1,10 +1,43 @@
 .sign-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .sign-row {
-    width: 100%;
+  width: 100%;
+}
+.fomularioSignin {
+  box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.75);
+}
+.titleLogin {
+  padding: 10px;
+  padding-top: 20px;
+  color: #ff6911;
+}
+
+.subtitleLogin {
+  padding: 10px;
+  padding-bottom: 2px;
+  max-width: 80% !important;
+  font-size: 24px;
+  font-weight: bold;
+}
+.containerButtons {
+  padding: 5px;
+  padding-bottom: 50px;
+}
+.btnAcction {
+  background-color: #ff6911 !important;
+  border: none !important;
+}
+.btnSecond {
+  background-color: white !important;
+  border: 1px solid !important;
+  color: #ff6911 !important;
+}
+.recoverPass{
+  cursor: pointer !important;
+  color: #ff6911 !important;
 }

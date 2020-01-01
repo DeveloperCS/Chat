@@ -58,40 +58,43 @@ class SignUp extends React.Component<Props, State> {
 
     render() {
         return this.state.redirect ? <Redirect to='/'/> : (
-            <Container className='sign-container'>
+            <Container className='sign-container container-fluid'>
                 <Row className='sign-row'>
-                    <Col xs='1' sm='2' md='3'/>
-                    <Col xs='10' sm='8' md='6'>
+                    <Col xs='1' sm='1' md='3'/>
+                    <Col xs='12' sm='12' md='6'>
                         <SignForm
                             title='Crear Cuenta'
                             showSpinner={this.state.showSpinner}
                             loadingButtonTitle='Crear Cuenta'
                             alternativeButtonTitle='Iniciar Sesión'
+                            subTitle=''
+                            buttonsType={['btnAcction','btnSecond']}
                             redirectURL='/signin'
+                            recoverPass={false}
                             onSubmit={this.handleSubmit}>
-                            <Form.Group>
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type='email' name='email' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Email</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='email' name='email' placeholder="Correo" required></Form.Control>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Nombre</Form.Label>
-                                <Form.Control type='text' name='name' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Nombre</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='text' name='name' placeholder="Nombre" required></Form.Control>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Apellido</Form.Label>
-                                <Form.Control type='text' name='lastname' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Apellido</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='text' name='lastname' placeholder="Apellido" required></Form.Control>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type='password' name='password' pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Contraseña</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='password' name='password' placeholder="Contraseña" pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$' required></Form.Control>
                             </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Admin Key</Form.Label>
-                                <Form.Control type='password' name='key' required></Form.Control>
+                            <Form.Group className={'pb-3'}>
+                                {/* <Form.Label>Admin Key</Form.Label> */}
+                                <Form.Control className={'border-top-0  border-right-0 border-left-0 border-bottom-2 border-gray'} type='password' name='key' placeholder="Admin Key" required></Form.Control>
                             </Form.Group>
                         </SignForm>
                     </Col>
-                    <Col xs='1' sm='2' md='3'/>
+                    <Col xs='1' sm='1' md='3'/>
                 </Row>
             </Container>
         );
