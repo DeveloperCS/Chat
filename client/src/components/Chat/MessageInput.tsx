@@ -60,9 +60,11 @@ class MessageInput extends React.Component<Props, State> {
 
             <Form className="input-area" onSubmit={this.sendMessage}>
                 <Form.Group className="input">
-                    <Form.Control ref={this.textFieldReference} autoComplete='off' name='text' type="text" placeholder="Escribe aquí tu mensaje" />
+                    <Form.Control className={'inputMsj'} ref={this.textFieldReference} autoComplete='off' name='text' type="text" placeholder="Escribe aquí tu mensaje" required/>
                 </Form.Group>
-                <LoadingButton className="button"  spinnerVariant='light' variant='success' loading={this.state.loading} disabled={this.state.loading} title='Enviar' />
+                <LoadingButton className="button" spinnerVariant='light' variant='success' loading={this.state.loading} disabled={this.state.loading}  >
+                    <i className="fas fa-paper-plane"></i>
+                </LoadingButton>
             </Form>
 
         );
