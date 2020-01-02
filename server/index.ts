@@ -43,6 +43,11 @@ app.use(express.static('../client'));
 
 app.set('port',process.env.PORT|| 3001);
 
-app.listen(app.get('port'), () => {
+
+const production  = 'wizcoach.herokuapp.com';
+const development = 'localhost';
+const url = (process.env.PORT!=undefined ? production : development);
+
+app.listen(app.get('port'),url, () => {
     console.log(`Server started in ${app.get('port')} PORT`);
 });
