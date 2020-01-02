@@ -52,7 +52,7 @@ class MessageList extends React.Component<Props, State> {
                         {
                             this.props.messages.map((message, index) => {
                                 console.log(Object.keys(message));
-                                console.log(index);
+                                console.log(message);
                                 if (index >= 3) {
                                     /*this.setState({
                                         limit: index
