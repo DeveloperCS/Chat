@@ -4,7 +4,7 @@ import { ThunkAction } from 'redux-thunk';
 import { AppState } from '../../reducers';
 import { PostAdmin, PostAdminAction } from '../../actionCreators/admins';
 import Axios from 'axios';
-import { BaseUser } from '../../../../../server/models/User';
+import { BaseUser } from '../../../models/User';//server
 
 const postAdmin: (admin: BaseUser) => ThunkAction<Promise<void>, AppState, null, PostAdminAction> = (admin) => async (dispatch) => {
     return Axios.post(SERVER + '/api/admins', admin, {

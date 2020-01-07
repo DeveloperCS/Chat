@@ -1,4 +1,4 @@
-import { JSONUser } from '../../../../server/models/User';
+import { JSONUser } from '../../models/User';//server
 import { ActionCreator } from "redux";
 import { GET_USER, GET_ACCESS_TOKEN, GET_REFRESH_TOKEN, DELETE_TOKENS, POST_USER } from "../actions";
 
@@ -12,6 +12,7 @@ export interface GetUserAction {
 }
 
 export const GetUser: ActionCreator<GetUserAction> = (user: JSONUser, token: String, refreshToken: String) => {
+    localStorage.setItem('User',JSON.stringify({user}))
     return {
         type: GET_USER,
         payload: {

@@ -1,6 +1,6 @@
 import React, { FormEvent } from 'react';
 import postMessage from '../../redux/thunkActionCreators/Messages/PostMessage';
-import { BaseMessage, SenderType } from '../../../../server/models/Message';
+import { BaseMessage, SenderType } from '../../models/Message';//server
 import { ThunkDispatch } from 'redux-thunk';
 import { CreateError } from '../../redux/actionCreators/error';
 import { connect } from 'react-redux';

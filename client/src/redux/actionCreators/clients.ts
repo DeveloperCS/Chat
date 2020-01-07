@@ -1,4 +1,4 @@
-import { JSONUser } from '../../../../server/models/User';
+import { JSONUser } from '../../models/User';//server
 import { ActionCreator } from "redux";
 import { POST_CLIENT, GET_ALL_CLIENTS, GET_CLIENT, PUT_CLIENT, DELETE_CLIENT } from "../actions";
 

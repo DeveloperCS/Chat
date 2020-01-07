@@ -1,7 +1,7 @@
 import { POST_MESSAGE } from "../actions"
 import { ActionCreator } from "redux";
-import { BaseMessage } from '../../../../server/models/Message';
-import { JSONUser } from "../../../../server/models/User";
+import { BaseMessage } from '../../models/Message';//server
+import { JSONUser } from "../../models/User";//server
 
 
 export interface PostMessageAction {

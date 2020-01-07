@@ -1,7 +1,7 @@
 import { Record, List } from 'immutable';
 import { POST_MESSAGE } from '../actions';
 import { PostMessageAction } from '../actionCreators/messages';
-import { BaseMessage } from '../../../../server/models/Message';
+import { BaseMessage } from '../../models/Message'; //server
 
 const MessageRecord = Record<BaseMessage>({
     userId: undefined,

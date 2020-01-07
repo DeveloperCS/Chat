@@ -1,4 +1,4 @@
-import { JSONUser } from '../../../../server/models/User';
+import { JSONUser } from '../../models/User';//server
 import { Record } from 'immutable';
 import { GetUserAction, GetAccessTokenAction, GetRefreshTokenAction, DeleteTokensAction, PostUserAction } from '../actionCreators/authentication';
 import { DELETE_TOKENS, GET_USER, POST_USER, GET_ACCESS_TOKEN, GET_REFRESH_TOKEN, POST_MESSAGE } from '../actions';
