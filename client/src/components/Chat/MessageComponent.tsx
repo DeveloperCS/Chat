@@ -4,13 +4,24 @@ import '../../style/Message'
 
 interface Props {
     message: Message,
-    id:any
+    id: any
 }
 
 const MessageComponent: React.FunctionComponent<Props> = (props) => {
-    return(
-         <div id={props.id} className="message">
-             <p>{ props.message.text }</p>
+
+    let fecha = new Date(props.message.date);
+
+    let hora = `${fecha.getHours()} : ${fecha.getMinutes()}`;
+    return (
+        <div id={props.id} className="message">
+            <div className={'row m-0 p-0'}>
+                <div className='col-12 m-0 p-0'>
+                    <p>{props.message.text}</p>
+                </div>
+                {/* <div className='col-12 text-right m-0 p-0'>
+                    <p>{'' + hora}</p>
+                </div> */}
+            </div>
         </div>
     );
 }

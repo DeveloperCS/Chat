@@ -19,13 +19,15 @@ interface Props {
 }
 
 interface State {
-    loading: boolean
+    loading: boolean,
+    limit: any
 }
 
 class MessageList extends React.Component<Props, State> {
 
     readonly state: State = {
-        loading: false
+        loading: false,
+        limit: null
     };
 
     constructor(props: Props) {
@@ -34,32 +36,34 @@ class MessageList extends React.Component<Props, State> {
     }
     setScroll(id: any) {
         let element = document.getElementById(id);
-        if(element){
+        if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
     }
 
-
     render() {
-     
+
         return (
             <div>
 
                 <Container>
                     <Container className="message-list">
-                        {
 
+                        {
                             this.props.messages.map((message, index) => {
-                    //              console.log(this.props.messages);
+                                console.log(Object.keys(message));
+                                console.log(message);
                                 if (index >= 3) {
-                                    this.setScroll(index)
+                                    /*this.setState({
+                                        limit: index
+                                    })*/
                                 }
                                 return (
                                     <MessageComponent id={index} key={index} message={message} />
                                 );
                             })
+
                         }
-                        
                     </Container>
                 </Container>
                 {/* <MessageInput userId={this.props.userId} /> */}
