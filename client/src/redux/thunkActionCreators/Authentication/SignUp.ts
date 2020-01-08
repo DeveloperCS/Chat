@@ -1,9 +1,10 @@
 import { PostUser, PostUserAction } from '../../actionCreators/authentication';
 import { getJSONHeaders } from '../sharedHeaders';
-import { SERVER } from '../constants';
+import { SERVERAPI, LOCALSERVER } from '../constants';
 import { ThunkAction } from 'redux-thunk';
 import { AppState } from '../../reducers';
 import Axios from 'axios';
+const SERVER = window.location.href.indexOf('localhost') > 0? LOCALSERVER: SERVERAPI;
 
 const signUp: (email: string, password: string, name: string, lastname: string, key: string) => ThunkAction<Promise<void>, AppState, null, PostUserAction> = (email, password, name, lastname, key) => async (dispatch) => {
     const body = {

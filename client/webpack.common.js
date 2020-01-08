@@ -4,10 +4,10 @@ const path = require('path');
 
 module.exports = {
     entry: [
-        '../client/src/index.tsx'
+        './src/index.tsx'
     ],
     output: {
-        publicPath: '/',
+        publicPath: './',
     },
     module: {
         rules: [{
@@ -47,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "../client/src/index.html",
+            template: "./src/index.html",
             filename: "index.html"
         })
     ],
@@ -55,7 +55,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.json', '.css', '.svg', '.png', '.jpg']
     },
     devServer: {
-        publicPath: '../client/src/',
+        publicPath: './',
         historyApiFallback: true,
     }
 };

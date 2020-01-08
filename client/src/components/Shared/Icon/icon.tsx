@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 interface Props {
     src: any,
     width: any, 
