@@ -1,6 +1,6 @@
 import React from 'react';
 import SignOutButton from '../../Buttons/SignOutButton';
-import '../../../style/Menu';
+//import '../../../style/Menu';
 
 interface Props {
     type: any,
