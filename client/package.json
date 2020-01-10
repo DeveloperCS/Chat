@@ -4,7 +4,8 @@
     "description": "Cliente para casa de empeños",
     "scripts": {
         "dev": "webpack-dev-server --mode production --open --config webpack.dev.js",
-        "build": "webpack --config webpack.prod.js",
+        "buildssss": "webpack --config webpack.prod.js",
+        "build":"",
         "start": "nodemon --exec babel-node server.js"
     },
     "author": "BrandonMA",
