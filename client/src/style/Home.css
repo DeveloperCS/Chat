@@ -12,8 +12,8 @@
 }
 
 .signout {
-  position: absolute;
-  right: 10px;
+  /* position: absolute;
+  right: 10px; */
 }
 
 .header p {
@@ -24,21 +24,25 @@
 .bodyM {
   overflow: auto !important;
   background: #d8e2e6;
-  
-    min-height: 494px;
-    max-height: 494px;
-    height: 494px;
-  
+
+  min-height: calc(80vh);
+  max-height: calc(80vh);
+  height: calc(80vh);
+
   /* position: absolute; */
   width: 100%;
   /* border: solid; */
   overflow: hidden;
 }
 
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */
+  .bodyM {
+    min-height: calc(90vh);
+    max-height: calc(90vh);
+    height: calc(90vh);
+  }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -49,11 +53,21 @@
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   /* Styles */
+  .bodyM {
+    min-height: calc(90vh);
+    max-height: calc(90vh);
+    height: calc(90vh);
+  }
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Styles */
+  .bodyM {
+    min-height: calc(90vh);
+    max-height: calc(90vh);
+    height: calc(90vh);
+  }
 }
 
 /* iPads (landscape) ----------- */
@@ -78,6 +92,11 @@
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
   /* Styles */
+  .bodyM {
+    min-height: calc(81vh);
+    max-height: calc(81vh);
+    height: calc(81vh);
+  }
 }
 
 /* Large screens ----------- */

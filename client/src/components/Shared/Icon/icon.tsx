@@ -7,13 +7,13 @@ interface Props {
     cursor:any
 }
 
-export const IconCustom: React.FunctionComponent<Props> = (props) => {
+export const IconCustom: React.FunctionComponent<any> = (props) => {
 
 
-    const { src, width, height,cursor} = props;
+    const { src, width, height,cursor,onCliked} = props;
 
     return (
-     <img src={`./src/static/icons/${src}`} style={{width:width,height:height,cursor:cursor}}/>
+     <img src={`./src/static/icons/${src}`} onClick={onCliked} style={{width:width,height:height,cursor:cursor}}/>
     );
 
 }

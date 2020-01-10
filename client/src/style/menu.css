@@ -1,0 +1,36 @@
+.content {
+  position: absolute;
+  z-index: 10;
+  box-shadow: 3px 2px 7px -4px rgba(0, 0, 0, 0.75);
+  background-color: #fff;
+  height: 100vh;
+  width: 50%;
+}
+.headerMenu {
+  background-color: #354751;
+  height: 200px;
+  color: white;
+}
+.iconCloseContainer {
+  text-align: end;
+  color: white;
+  font-size: 25px;
+}
+
+.iconCloseContainer i {
+  cursor: pointer;
+}
+.titleHeaderMenu {
+  padding-top: 10%;
+}
+.footerMenu {
+  padding-bottom: 10px;
+}
+.signout {
+  width: 100%;
+}
+@media (max-width: 780px) {
+  .content {
+    width: 80%;
+  }
+}
