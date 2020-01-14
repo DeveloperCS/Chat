@@ -16,8 +16,6 @@ const Home: React.FunctionComponent<Props> = (props) => {
 
     const [opened, changeOpened] = useState(false);
 
-   
-
     if (props.user !== null) {
         //console.log(props.user.name)
         // const userName=
@@ -27,7 +25,7 @@ const Home: React.FunctionComponent<Props> = (props) => {
         <Auth>
             {props.user === null ? null :
                 <div>
-                    <MenuSider header={`${user.name} ${user.lastname}`} isOpened={opened} onHandlerOpened={() =>changeOpened(!opened)} type={''} />
+                    <MenuSider header={`${user.name} ${user.lastname}`} isOpened={opened} onHandlerLogout={()=>{changeOpened(false)}} onHandlerOpened={() =>changeOpened(!opened)} type={''} />
                     <div className="header">
                         <div className={'container-fluid m-0 p-0'}>
                             <div className='row'>

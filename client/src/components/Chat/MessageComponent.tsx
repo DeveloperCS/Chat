@@ -18,9 +18,6 @@ const MessageComponent: React.FunctionComponent<Props> = (props) => {
                 <div className='col-12 m-0 p-0'>
                     <p>{props.message.text}</p>
                 </div>
-                {/* <div className='col-12 text-right m-0 p-0'>
-                    <p>{'' + hora}</p>
-                </div> */}
             </div>
         </div>
     );

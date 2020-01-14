@@ -6,11 +6,12 @@ interface Props {
     type: any,
     header: string,
     isOpened:any,
-    onHandlerOpened:any
+    onHandlerOpened:any,
+    onHandlerLogout: ()=>void
 }
 export const MenuSider: React.FunctionComponent<Props> = (props) => {
 
-    const { header,isOpened,onHandlerOpened} = props
+    const { header,isOpened,onHandlerOpened,onHandlerLogout} = props;
 
     return (
         <div className={isOpened?`content`:`d-none`}>
@@ -22,8 +23,8 @@ export const MenuSider: React.FunctionComponent<Props> = (props) => {
                 <div className={`col-12`}>
 
                 </div>
-                <div className={`col-12 align-self-end footerMenu`}>
-                    <SignOutButton className="signout" title='Cerrar sesión' />
+                <div className={`col-12 align-self-end footerMenu`} >
+                    <SignOutButton onClicked={onHandlerLogout} className="signout" title='Cerrar sesión' />
                 </div>
             </div>
         </div>
