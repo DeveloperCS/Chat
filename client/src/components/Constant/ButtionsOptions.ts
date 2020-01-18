@@ -15,5 +15,11 @@ export const buttons :any= {
             "Hombre",
             "Mujer"
         ]
+    },
+    "ahora-despues":{
+        "fields": [
+            "Ahora",
+            "No, despues"
+        ]
     }
 }

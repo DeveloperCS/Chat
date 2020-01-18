@@ -14,8 +14,8 @@ import '../../style/MessageInput'
 interface Props {
     postMessage: (sessionId: string, message: BaseMessage) => Promise<void>
     userId: string,
-    disable:boolean,
-    className:any
+    disable: boolean,
+    className: any
 }
 
 interface State {
@@ -48,8 +48,12 @@ class MessageInput extends React.Component<Props, State> {
             sender: SenderType.user,
             text: data.get('text') as string,
             date: new Date(),
-            fields:{},
-            action:''
+            fields: {
+                inputOption: { stringValue: "" },
+                valuesOptions: { stringValue: "" },
+                continueBot: { stringValue: "" }
+            },
+            action: ''
         };
         this.textFieldReference.current.value = ""
         this.props.postMessage(this.props.userId, message).then(() => {
@@ -64,9 +68,9 @@ class MessageInput extends React.Component<Props, State> {
 
             <Form className={`${this.props.className} input-area`} onSubmit={this.sendMessage}>
                 <Form.Group className="input">
-                    <Form.Control disabled={this.props.disable} className={'inputMsj'} ref={this.textFieldReference} autoComplete='off' name='text' type="text" placeholder="Escribe aquí tu mensaje" required/>
+                    <Form.Control disabled={this.props.disable} className={'inputMsj'} ref={this.textFieldReference} autoComplete='off' name='text' type="text" placeholder="Escribe aquí tu mensaje" required />
                 </Form.Group>
-                <LoadingButton className="button" spinnerVariant='light' variant='success' loading={this.state.loading} disabled={this.state.loading||this.props.disable}  >
+                <LoadingButton className="button" spinnerVariant='light' variant='success' loading={this.state.loading} disabled={this.state.loading || this.props.disable}  >
                     <i className="fas fa-paper-plane"></i>
                 </LoadingButton>
             </Form>

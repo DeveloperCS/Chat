@@ -14,6 +14,7 @@ import MessageButtonOptions from './MessageButtonOptions';
 import { IconCustom } from '../Shared/Icon';
 import '../../style/MessageList';
 import { buttons } from '../Constant/ButtionsOptions';
+// import { Element ,scroller,Link} from 'react-scroll';
 
 interface Props {
     postMessage: (sessionId: string, message: BaseMessage) => Promise<void>
@@ -30,6 +31,13 @@ interface State {
 }
 
 let cont = 0;
+let myRef: any = null;
+const scrollType = {
+    duration: 500,
+    delay: 50,
+    smooth: true, // linear “easeInQuint” “easeOutCubic” 
+    offset: -10,
+ };
 class MessageList extends React.Component<Props, State> {
 
     readonly state: State = {
@@ -46,7 +54,10 @@ class MessageList extends React.Component<Props, State> {
 
         this.initMessage = this.initMessage.bind(this);
         this.getOptionsButtons = this.getOptionsButtons.bind(this);
+        this.getScroll = this.getScroll.bind(this);
 
+        myRef = React.createRef();
+        //this.scrollToMyRef = this.scrollToMyRef(this);
     }
 
     componentDidMount() {
@@ -54,6 +65,10 @@ class MessageList extends React.Component<Props, State> {
 
     }
 
+    scrollToMyRef = () => {
+        console.log(myRef.current.scrollHeight);
+        window.scrollTo(0, myRef.current.scrollHeight)
+    }
 
     initMessage(text: string) {
         let message: BaseMessage = {
@@ -76,7 +91,16 @@ class MessageList extends React.Component<Props, State> {
 
         })
     }
+    getScroll(id: any) {
+        console.log("inFunction", id);
+        var elmnt = document.getElementById(id);
+        if (elmnt) {
+            console.log(elmnt);
+            elmnt.scrollIntoView();
+        }
+        // this.scrollToMyRef()
 
+    }
 
     getOptionsButtons(fieldName: any, count: any) {
         this.setState({
@@ -90,9 +114,6 @@ class MessageList extends React.Component<Props, State> {
         let hasOptions = false;
         let responseBot = false;
 
-
-
-
         if (msgs.length != 0) {
             const lastMsg: any = msgs[msgs.length - 1];
             if (lastMsg.action != 'input.unknown') {
@@ -104,13 +125,16 @@ class MessageList extends React.Component<Props, State> {
                     if ((lastMsg.sender == 'bot')) {
 
                         if (!responseBot && hasOptions) {
-                            //console.log('falseBot',lastMsg.text);
                             this.getOptionsButtons(fieldName, msgs.length);
                         } else {
                             if (responseBot) {
                                 this.initMessage(lastMsg.action);
                             }
                         }
+                        //console.log(lastMsg.date);
+                        // this.getScroll(`${lastMsg.date}`);
+                        // scroller.scrollTo(`${lastMsg.date}`,scrollType);
+                        //this.scrollToMyRef()
                     }
 
                 }
@@ -122,7 +146,7 @@ class MessageList extends React.Component<Props, State> {
 
         return (
             <div>
-                <Container>
+                <Container ref={myRef} >
                     <Container className="message-list">
                         {
                             msgs.map((message: any, index: any) => {
@@ -138,7 +162,9 @@ class MessageList extends React.Component<Props, State> {
                                                 }
                                                 <p className={`${message.sender == 'bot' ? 'pl-2' : ''}`}>{message.sender == 'bot' ? 'Bot' : 'Tu'}</p>
                                             </div>
-                                            <MessageComponent id={index} sender={message.sender} text={message.text} />
+                                            {/* <Element name={`${message.date}`} > */}
+                                                <MessageComponent id={`${message.date}`} sender={message.sender} text={message.text} />
+                                            {/* </Element> */}
                                         </div>
                                 );
                             })
