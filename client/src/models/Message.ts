@@ -7,5 +7,7 @@ export interface BaseMessage {
     sender: SenderType
     userId: string //userId: MongoUser['_id']
     text: string
-    date: Date
+    date: Date,
+    fields: Object ,
+    action:string
 }

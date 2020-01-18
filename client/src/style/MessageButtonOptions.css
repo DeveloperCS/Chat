@@ -1,0 +1,9 @@
+.contentButtons{
+    justify-content: flex-end;
+    padding-right: 22px;
+}
+
+.buttons{
+    /* max-width: 100px !important; */
+    width: auto;
+}

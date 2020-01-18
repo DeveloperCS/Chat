@@ -1,4 +1,4 @@
-.message{
+/* .message{
     max-width: 450px;
     padding: 15px;
     border-radius: 15px 15px 15px 0px;
@@ -17,4 +17,25 @@
     color: black;
     align-self: flex-end;
     
+} */
+
+.message_bot{
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 0px 15px 15px 15px;
+    background: #ececec;
+    color: black;
+    margin-top: 0px;
+    align-self: flex-start;
+}
+
+.message_user{
+    max-width: 450px;
+    padding: 15px;
+    border-radius: 15px 0px 15px 15px;
+    background: #ff6911;
+    color:white;
+    margin-top: 0px;
+    display: flex;
+    align-self: flex-end;
 }

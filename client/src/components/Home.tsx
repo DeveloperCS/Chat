@@ -48,7 +48,7 @@ const Home: React.FunctionComponent<Props> = (props) => {
                     </div>
 
 
-                    <MessageInput userId={props.user.id} />
+                    {/* <MessageInput userId={props.user.id} /> */}
                 </div>
             }
         </Auth>

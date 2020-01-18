@@ -3,20 +3,20 @@ import { Message } from '../../redux/reducers/messages';
 import '../../style/Message'
 
 interface Props {
-    message: Message,
-    id: any
+    // message: Message,
+    id: any,
+    sender:any,
+    text:any
 }
 
-const MessageComponent: React.FunctionComponent<Props> = (props) => {
+const MessageComponent: React.FunctionComponent<Props> = ({id,sender,text}) => {
 
-    let fecha = new Date(props.message.date);
 
-    let hora = `${fecha.getHours()} : ${fecha.getMinutes()}`;
     return (
-        <div id={props.id} className="message">
+        <div id={id} className={`message_${sender}`}>
             <div className={'row m-0 p-0'}>
                 <div className='col-12 m-0 p-0'>
-                    <p>{props.message.text}</p>
+                    <p>{text}</p>
                 </div>
             </div>
         </div>
